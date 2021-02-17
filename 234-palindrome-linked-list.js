@@ -62,3 +62,24 @@ let reverseList = (prev, tempHead) => {
   }
   return prev;
 };
+
+// Alternative without destructuring swaps
+let _reverseList = (head) => {
+  let prev = null;
+  let next = null;
+
+  while (head !== null) {
+    next = head.next;
+    head.next = prev;
+    prev = head;
+    head = next;
+  }
+  return prev;
+};
+
+/**
+1. We can use the Fast & Slow pointers method similar to Middle of the LinkedList to find the middle node of the LinkedList.
+2. Once we have the middle of the LinkedList, we will reverse the second half.
+3. Then, we will compare the first half with the reversed second half to see if the LinkedList represents a palindrome.
+4. Finally, we will reverse the second half of the LinkedList again to revert and bring the LinkedList back to its original form.
+ */
