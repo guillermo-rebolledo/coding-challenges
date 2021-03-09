@@ -41,7 +41,7 @@ var reverseList = function (head) {
   return previousNode;
 };
 
-// Cleaner approach with Array Destructuring
+// Approach with Array Destructuring
 let reverseList = (prev, head) => {
   while (head) {
     [head.next, prev, head] = [prev, head, head.next];
